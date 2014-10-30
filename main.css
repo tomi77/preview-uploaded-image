@@ -8,7 +8,15 @@ body {
     border-bottom: 1px solid #c0c0c0;
 }
 #dropbox > input {
-    padding: 20px;
+    display: none;
+}
+#dropbox > a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(117, 117, 117);
+    font-size: 20pt;
+    line-height: 60px;
 }
 
 canvas {

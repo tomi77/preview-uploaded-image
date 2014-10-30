@@ -1,8 +1,42 @@
 (function (self) {
     var previews;
 
-    self.init = function init () {
+    self.init = function init() {
         previews = document.getElementById('previews');
+
+        var dropbox = document.getElementById("dropbox");
+        dropbox.addEventListener("dragenter", dragenter, false);
+        dropbox.addEventListener("dragover", dragover, false);
+        dropbox.addEventListener("drop", drop, false);
+
+        function dragenter(e) {
+            e.stopPropagation();
+            e.preventDefault();
+        }
+
+        function dragover(e) {
+            e.stopPropagation();
+            e.preventDefault();
+        }
+
+        function drop(e) {
+            e.stopPropagation();
+            e.preventDefault();
+
+            var dt = e.dataTransfer;
+            var files = dt.files;
+
+            handleFiles(files);
+        }
+
+        var a = document.getElementById('fileSelect');
+        a.addEventListener('click', function (e) {
+            var inp = document.getElementById('fileElem');
+            if (inp) {
+                inp.click();
+            }
+            e.preventDefault();
+        }, false);
     };
 
     self.handleFiles = function (files) {
