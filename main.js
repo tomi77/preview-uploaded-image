@@ -15,30 +15,31 @@
                 continue;
             }
 
-            var reader = new FileReader();
-            var img = document.createElement('img');
-            var canvas = document.createElement('canvas');
-            canvas.width = canvas.height = 150;
-            canvas.onclick = function () {
-                window.open();
-            };
-            previews.appendChild(canvas);
-
-            img.onload = (function (canvas) {
-                return function (e) {
-                    canvas.getContext('2d').drawImage(e.target, 0, 0, 150, 150);
-                    canvas.onclick = function () {
-                        window.open(e.target.src);
-                    };
-                };
-            })(canvas);
-
-            reader.onload = (function (img) {
-                return function (e) {
-                    img.src = e.target.result;
-                }
-            })(img);
-            reader.readAsDataURL(file);
+            createThumbnail(file);
         }
     };
+
+    function createThumbnail(file) {
+        var reader = new FileReader();
+        var img = document.createElement('img');
+        var canvas = document.createElement('canvas');
+        canvas.width = canvas.height = 150;
+        previews.appendChild(canvas);
+
+        img.onload = (function (canvas) {
+            return function (e) {
+                canvas.getContext('2d').drawImage(e.target, 0, 0, 150, 150);
+                canvas.onclick = function () {
+                    window.open(e.target.src);
+                };
+            };
+        })(canvas);
+
+        reader.onload = (function (img) {
+            return function (e) {
+                img.src = e.target.result;
+            }
+        })(img);
+        reader.readAsDataURL(file);
+    }
 })(window);
