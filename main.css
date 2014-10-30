@@ -1,23 +1,23 @@
-input {
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#dropbox {
+    background-color: #fafafa;
+    border-bottom: 1px solid #c0c0c0;
+}
+#dropbox > input {
     padding: 20px;
 }
 
 canvas {
-    padding: 20px 10px;
-    border: 1px solid #eee;
-    border-left-width: 0;
+    margin: 20px 10px;
     cursor: pointer;
 }
 canvas:first-child {
-    border-left-width: 1px;
-    padding-left: 20px;
+    margin-left: 20px;
 }
 canvas:last-child {
-    padding-right: 20px;
-}
-canvas:nth-child(odd) {
-    background-color: #fcfcfc;
-}
-canvas:nth-child(even) {
-    background-color: #fdfdfd;
+    margin-right: 20px;
 }

@@ -7,7 +7,9 @@
     <script type="text/javascript" src="main.js"></script>
 </head>
 <body onload="init()">
-    <input type="file" multiple onchange="handleFiles(this.files)">
+    <div id="dropbox">
+        <input type="file" multiple onchange="handleFiles(this.files)">
+    </div>
     <div id="previews"></div>
 </body>
 </html>
