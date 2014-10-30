@@ -1,0 +1,22 @@
+input {
+    padding: 20px;
+}
+
+canvas {
+    padding: 20px 10px;
+    border: 1px solid #eee;
+    border-left-width: 0;
+}
+canvas:first-child {
+    border-left-width: 1px;
+    padding-left: 20px;
+}
+canvas:last-child {
+    padding-right: 20px;
+}
+canvas:nth-child(odd) {
+    background-color: #fcfcfc;
+}
+canvas:nth-child(even) {
+    background-color: #fdfdfd;
+}
