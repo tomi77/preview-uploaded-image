@@ -6,6 +6,7 @@ canvas {
     padding: 20px 10px;
     border: 1px solid #eee;
     border-left-width: 0;
+    cursor: pointer;
 }
 canvas:first-child {
     border-left-width: 1px;

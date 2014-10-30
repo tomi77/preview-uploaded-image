@@ -19,14 +19,19 @@
             var img = document.createElement('img');
             var canvas = document.createElement('canvas');
             canvas.width = canvas.height = 150;
+            canvas.onclick = function () {
+                window.open();
+            };
             previews.appendChild(canvas);
-            var ctx = canvas.getContext('2d');
 
-            img.onload = (function (ctx) {
+            img.onload = (function (canvas) {
                 return function (e) {
-                    ctx.drawImage(e.target, 0, 0, 150, 150);
+                    canvas.getContext('2d').drawImage(e.target, 0, 0, 150, 150);
+                    canvas.onclick = function () {
+                        window.open(e.target.src);
+                    };
                 };
-            })(ctx);
+            })(canvas);
 
             reader.onload = (function (img) {
                 return function (e) {
