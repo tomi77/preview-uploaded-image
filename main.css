@@ -10,13 +10,14 @@ body {
 #dropbox > input {
     display: none;
 }
-#dropbox > a {
+#dropbox > span {
     display: block;
     text-align: center;
     text-decoration: none;
     color: rgb(117, 117, 117);
     font-size: 20pt;
     line-height: 60px;
+    cursor: pointer;
 }
 
 canvas {
